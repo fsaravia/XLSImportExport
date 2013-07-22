@@ -4,6 +4,7 @@ import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Date;
 import org.apache.poi.hssf.OldExcelFormatException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Cell;
@@ -60,7 +61,7 @@ public final class XLSImport {
         return selectedRow.getCell(index);
     }
 
-    private Object getValue(int cellIndex) {
+    public Object getValue(int cellIndex) {
         Cell cell = getCell(cellIndex);
         if (cell == null) {
             return "";
@@ -100,5 +101,13 @@ public final class XLSImport {
 
     public double getDouble(int cellIndex) {
         return (Double) getValue(cellIndex);
+    }
+    
+    public boolean getBoolean(int cellIndex) {
+        return (Boolean) getValue(cellIndex);
+    }
+    
+    public Date getDate(int cellIndex) {
+        return (Date) getValue(cellIndex);
     }
 }
