@@ -102,11 +102,16 @@ public final class XLSImport {
     public double getDouble(int cellIndex) {
         return (Double) getValue(cellIndex);
     }
-    
+
+    public int getInt(int cellIndex) {
+        double doubleValue = getDouble(cellIndex);
+        return (int) doubleValue;
+    }
+
     public boolean getBoolean(int cellIndex) {
         return (Boolean) getValue(cellIndex);
     }
-    
+
     public Date getDate(int cellIndex) {
         return (Date) getValue(cellIndex);
     }
