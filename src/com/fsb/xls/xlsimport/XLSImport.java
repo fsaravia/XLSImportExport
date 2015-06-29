@@ -68,7 +68,7 @@ public final class XLSImport {
         }
         Object o = null;
         int type = cell.getCellType();
-        if(type == Cell.CELL_TYPE_FORMULA){
+        if (type == Cell.CELL_TYPE_FORMULA) {
             type = cell.getCachedFormulaResultType();
         }
         switch (type) {
